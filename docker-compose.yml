@@ -1,0 +1,23 @@
+version: "3"
+services:
+  server:
+    image: jetbrains/teamcity-server:2017.1
+    deploy:
+        resources:
+            limits:
+                memory: 2G
+    ports:
+      - "8111:${PORT:-8111}"
+    volumes:
+      - ${DATA_PATH:-~/Workspace/TeamCity/data/}:/data/teamcity_server/datadir
+      - ${LOGS_PATH:-~/Workspace/TeamCity/logs/}:/opt/teamcity/logs
+  agent:
+    image: teamcity-android-agent
+    deploy:
+        resources:
+            limits:
+                memory: 6G
+    volumes:
+      - ${CONF_PATH:-~/Workspace/TeamCity/agent/}:/data/teamcity_agent/conf
+    environment:
+      - SERVER_URL=${SERVER_URL}
