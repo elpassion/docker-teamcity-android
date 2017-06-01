@@ -32,10 +32,4 @@ RUN ${LICENSE_SCRIPT_PATH} \
 RUN ${LICENSE_SCRIPT_PATH} \
     "android update sdk --all --no-ui —-filter platform-tools,build-tools-25.0.3,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
 
-RUN echo "no" | android create avd \
-    --force \
-    --device "Nexus 5" \
-    --name emulator64 \
-    --abi google_apis/armeabi-v7a \
-    --target android-25 \
-    --skin 480x800
+ADD licenses.tar.gz $ANDROID_HOME/
