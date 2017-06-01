@@ -30,6 +30,6 @@ RUN ${LICENSE_SCRIPT_PATH} \
 	"android update sdk --all --no-ui --filter sys-img-armeabi-v7a-google_apis-25"
 
 RUN ${LICENSE_SCRIPT_PATH} \
-    "android update sdk --all --no-ui —-filter platform-tools,build-tools-25.0.3,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
+    "android update sdk --all --no-ui --filter platform-tools,build-tools-25.0.3,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
 
 ADD licenses.tar.gz $ANDROID_HOME/
