@@ -24,10 +24,12 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 RUN ${LICENSE_SCRIPT_PATH} \
-	"android update sdk --no-ui --filter android-25"
+    "android update sdk --no-ui --filter android-21"
 
 RUN ${LICENSE_SCRIPT_PATH} \
-	"android update sdk --all --no-ui --filter sys-img-armeabi-v7a-google_apis-25"
+    "android update sdk --all --no-ui --filter sys-img-armeabi-v7a-google_apis-21"
 
 RUN ${LICENSE_SCRIPT_PATH} \
     "android update sdk --all --no-ui --filter platform-tools,build-tools-25.0.3,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
+
+RUN echo "no" | android create avd -f -d "Nexus 5" -n emulator-21 -b google_apis/armeabi-v7a -t android-21 -s 480x800
