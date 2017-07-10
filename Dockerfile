@@ -24,4 +24,4 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 RUN ${LICENSE_SCRIPT_PATH} \
-    "android update sdk --all --no-ui --filter platform-tools,build-tools-25.0.3,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
+    "android update sdk --all --no-ui --filter platform-tools,build-tools-25.0.3,android-25, android-26,extra-android-support,extra-android-m2repository,extra-google-m2repository,extra-google-google_play_services"
