@@ -12,6 +12,8 @@ services:
       - ${DATA_PATH:-~/Workspace/TeamCity/data/}:/data/teamcity_server/datadir
       - ${LOGS_PATH:-~/Workspace/TeamCity/logs/}:/opt/teamcity/logs
   agent:
+    devices: 
+      - "/dev/bus/usb:/dev/bus/usb"
     image: teamcity-android-agent
     deploy:
         resources:
