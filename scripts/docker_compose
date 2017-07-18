@@ -2,14 +2,14 @@
 
 default_data_path="~/Workspace/TeamCity/data/"
 default_agent_directory="~/Workspace/TeamCity/agent/"
-default_server_url="192.168.1.155:8111"
 
 echo "Insert server URL [$default_server_url]:"
 read server_url
 if [ -n "$server_url" ]; then
 export SERVER_URL="http://$server_url"
 else
-export SERVER_URL="http://$default_server_url"
+echo "You have to specify docker ip adress, e.g. 191.168.1.10:8111"
+exit 1
 fi
 
 echo "Insert agent name:"
