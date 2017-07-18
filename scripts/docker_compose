@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+default_data_path="~/Workspace/TeamCity/data/"
+default_agent_directory="~/Workspace/TeamCity/agent/"
+default_server_url="192.168.1.155:8111"
+
+echo "Insert server URL [$default_server_url]:"
+read server_url
+if [ -n "$server_url" ]; then
+export SERVER_URL="http://$server_url"
+else
+export SERVER_URL="http://$default_server_url"
+fi
+
+echo "Insert agent name:"
+read agent_name
+if [ -z "$agent_name" ]; then
+echo "Agent name can't be empty!"
+exit 1
+fi
+
+echo "Insert data directory [$default_data_path]"
+read data_path
+if [ -n "$data_path" ]; then
+export DATA_PATH="$data_path"
+else
+export DATA_PATH=$default_data_path
+fi
+
+echo "Insert agent config directory [$default_agent_directory]"
+read agent_directory
+if [ -n "$agent_directory" ]; then
+export CONF_PATH="$data_path"
+else
+export CONF_PATH=$default_agent_directory
+fi
+
+echo "server url=$SERVER_URL;agent name=$agent_name; data path=$DATA_PATH; agent directory=$CONF_PATH"
+
+docker-compose up -d "$agent_name"

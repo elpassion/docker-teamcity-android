@@ -1,0 +1,6 @@
+#!/bin/sh
+
+teamcity_hash=`docker ps -a | grep dockerteamcityandroid_agent_1 | awk '{print $1}'`
+echo $teamcity_hash
+docker exec -it $teamcity_hash bash
+
