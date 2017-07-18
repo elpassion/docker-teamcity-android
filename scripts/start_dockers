@@ -1,4 +1,4 @@
 #!/bin/bash
-docker restart c1bd23cc4986       # teamcity-android-agent
-docker restart f3aeae54c3c7       # jetbrains/upsource:2017.1.1922
-docker restart d7fd680fe0f5       # jetbrains/teamcity-server:2017.1 
+docker restart `container_id dockerteamcityandroid_agent_1`
+docker restart `container_id upsource-server-instance`
+docker restart `container_id dockerteamcityandroid_server_1`
