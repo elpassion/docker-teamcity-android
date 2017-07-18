@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]
+  then
+    echo "USAGE:\n container_id {name}\n e.g. container_id dockerteamcityandroid_agent_1"
+   exit
+fi
+
+echo `docker ps -a | grep $1 | awk '{print $1}'`
