@@ -1,4 +1,4 @@
 #!/bin/bash
 docker restart `container_id dockerteamcityandroid_agent_1`
 docker restart `container_id upsource-server-instance`
-docker restart `container_id dockerteamcityandroid_server_1`
+docker restart `container_id dockerteamcityandroid_teamcity-server_1`
