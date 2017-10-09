@@ -21,5 +21,5 @@ export CONF_PATH=<AGENT_CONF_DIR>
 
 # build provided image & start docker containers
 docker build -t teamcity-android-agent .
-docker-compose up server agent
+docker-compose up teamcity-server teamcity-agent
 ```

@@ -1,6 +1,6 @@
 version: "3"
 services:
-  server:
+  teamcity-server:
     image: jetbrains/teamcity-server:2017.1.4
     deploy:
         resources:
@@ -11,8 +11,8 @@ services:
     volumes:
       - ${DATA_PATH:-~/Workspace/TeamCity/data/}:/data/teamcity_server/datadir
       - ${LOGS_PATH:-~/Workspace/TeamCity/logs/}:/opt/teamcity/logs
-  agent:
-    devices: 
+  teamcity-agent:
+    devices:
       - "/dev/bus/usb:/dev/bus/usb"
     image: teamcity-android-agent
     deploy:
