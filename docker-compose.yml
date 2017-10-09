@@ -2,7 +2,6 @@ version: "3"
 services:
   teamcity-server:
     image: jetbrains/teamcity-server:2017.1.4
-    name: dockerteamcityandroid_server_1
     deploy:
         resources:
             limits:
@@ -16,7 +15,6 @@ services:
     devices:
       - "/dev/bus/usb:/dev/bus/usb"
     image: teamcity-android-agent
-    name: dockerteamcityandroid_agent_1
     deploy:
         resources:
             limits:
