@@ -1,0 +1,4 @@
+#!/bin/sh
+
+teamcity_agent_hash=`container_id dockerteamcityandroid_agent_1`
+docker restart $teamcity_agent_hash
