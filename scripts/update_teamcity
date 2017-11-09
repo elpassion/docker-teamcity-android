@@ -1,4 +1,5 @@
 #!/bin/bash
 
-cd .. && docker-compose pull teamcity-server
-cd .. && docker-compose up -d teamcity-server
+cd ..
+docker-compose pull teamcity-server
+docker-compose up -d teamcity-server
