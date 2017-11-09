@@ -1,7 +1,7 @@
 version: "3"
 services:
   teamcity-server:
-    image: jetbrains/teamcity-server:2017.1.4
+    image: jetbrains/teamcity-server:2017.1.5
     deploy:
         resources:
             limits:
