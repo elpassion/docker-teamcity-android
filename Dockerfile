@@ -16,7 +16,7 @@ ENV PATH ${PATH}:/opt/tools
 ENV LICENSE_SCRIPT_PATH /opt/tools/android-accept-licenses.sh
 
 RUN cd /opt && wget --output-document=android-tools.zip \
-    https://dl.google.com/android/repository/tools_r25.2.5-linux.zip && \
+    https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && \
     unzip android-tools.zip -d android-sdk-linux && \
     chown -R root.root android-sdk-linux
 
