@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-agent:2017.2
+FROM jetbrains/teamcity-agent:2018.1.4
 
 MAINTAINER Paweł Gajda
 
