@@ -21,7 +21,7 @@ RUN cd /opt && wget --output-document=android-tools.zip \
     chown -R root.root android-sdk-linux
 
 ENV ANDROID_HOME /opt/android-sdk-linux
-ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
-RUN /opt/android-sdk-linux/tools/bin/sdkmanager "ndk-bundle"
-RUN yes | /opt/android-sdk-linux/tools/bin/sdkmanager --licenses
+RUN sdkmanager "ndk-bundle"
+RUN yes | sdkmanager --licenses
