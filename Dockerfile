@@ -24,4 +24,5 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
 RUN yes | sdkmanager --licenses
-RUN sdkmanager "ndk-bundle"
+RUN sdkmanager --update
+RUN yes | sdkmanager "build-tools;29.0.3" "platforms;android-29" "ndk-bundle" "ndk;21.0.6113669"
