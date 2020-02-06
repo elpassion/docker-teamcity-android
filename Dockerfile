@@ -3,6 +3,7 @@ FROM jetbrains/teamcity-agent:2019.2.1
 MAINTAINER Paweł Gajda
 
 ENV GRADLE_HOME=/usr/bin/gradle
+RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata
 
 RUN apt-get update
 RUN apt-get install -y --force-yes expect git mc gradle unzip \
